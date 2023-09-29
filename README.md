@@ -11,9 +11,16 @@ Install all the necessary package with composer
 
 ```bash
   cd my-project
-  composer install 
+  composer install
+  php artisan passport:install  
 ```
-    
+## Enviornment
+Create .env file same as .env.example file.
+Set database details in .env file.
+Create .env.testing for testing Enviornment. 
+
+
+
 ## API Reference
 
 #### Get all inventory
@@ -37,7 +44,11 @@ Install all the necessary package with composer
 | `id`      | `string` | **Required**. Id of item to fetch | 
 
 
-## Test
+## Set Test Enviornment
+ 
+```bash
+  php artisan config:cache --env=testing
+```
 To run the testcases execute commands.
 
 ```bash
@@ -45,6 +56,8 @@ To run the testcases execute commands.
 ```
 ## Test Coverage
 To run the testcases execute commands.
+
+Note : Install php xdebug to generate coverage report.
 
 ```bash
   php artisan test --coverage
